@@ -47,7 +47,7 @@ const LandingPage = () => {
       </div>
 
       <Button className="mt-6" size={"lg"} asChild>
-        <Link href={"/sign-ip"}>Get TeamTrackr for free</Link>
+        <Link href={"/sign-up"}>Get TeamTrackr for free</Link>
       </Button>
     </div>
   )
