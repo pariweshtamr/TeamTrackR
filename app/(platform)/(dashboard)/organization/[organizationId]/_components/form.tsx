@@ -1,7 +1,7 @@
 "use client"
 import { createBoard } from "@/actions/create-board"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import FormInput from "@/components/form/form-input"
+import FormSubmit from "@/components/form/form-submit"
 import { useAction } from "@/hooks/useAction"
 
 const Form = () => {
@@ -17,16 +17,10 @@ const Form = () => {
   return (
     <form action={onSubmit}>
       <div className="flex flex-col space-y-2">
-        <Input
-          type="text"
-          id="title"
-          name="title"
-          required
-          placeholder="Enter a board title"
-        />
+        <FormInput errors={fieldErrors} id="title" label="Board Title" />
       </div>
 
-      <Button type="submit">Submit</Button>
+      <FormSubmit variant="primary">Save</FormSubmit>
     </form>
   )
 }
