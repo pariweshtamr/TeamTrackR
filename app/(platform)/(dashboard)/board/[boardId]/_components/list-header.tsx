@@ -7,11 +7,13 @@ import { List } from "@prisma/client"
 import { ElementRef, useRef, useState } from "react"
 import { toast } from "sonner"
 import { useEventListener } from "usehooks-ts"
+import { ListOptions } from "./list-options"
 
 type ListHeaderProps = {
   data: List
+  onAddCard: () => void
 }
-export const ListHeader = ({ data }: ListHeaderProps) => {
+export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
   const [isEditable, setIsEditable] = useState(false)
   const [title, setTitle] = useState(data.title)
   const formRef = useRef<ElementRef<"form">>(null)
@@ -93,6 +95,8 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
           {title}
         </div>
       )}
+
+      <ListOptions onAddCard={onAddCard} data={data} />
     </div>
   )
 }
