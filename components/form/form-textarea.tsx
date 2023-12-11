@@ -53,14 +53,18 @@ export const FormTextArea = forwardRef<HTMLTextAreaElement, FormTextAreaProps>(
             onKeyDown={onKeyDown}
             onBlur={onBlur}
             onClick={onClick}
-            required
+            required={required}
             placeholder={placeholder}
-            name="title"
+            name={id}
+            id={id}
             disabled={pending || disabled}
             ref={ref}
-            className={cn(
-              "resize-none focus-visible:ring-0 focus-visible:ring-offset-0 ring-0 focus:ring-0 outline-none shadow-sm"
-            )}
+            className={
+              (cn(
+                "resize-none focus-visible:ring-0 focus-visible:ring-offset-0 ring-0 focus:ring-0 outline-none shadow-sm"
+              ),
+              className)
+            }
             aria-describedby={`${id}-error`}
             defaultValue={defaultValue}
           />
