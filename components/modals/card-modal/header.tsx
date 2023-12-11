@@ -24,6 +24,9 @@ export const Header = ({ data }: HeaderProps) => {
       queryClient.invalidateQueries({
         queryKey: ["card", data.id],
       })
+      queryClient.invalidateQueries({
+        queryKey: ["card-logs", data.id],
+      })
       toast.success(`Renamed to "${data.title}"`)
       setTitle(data.title)
     },
@@ -45,7 +48,7 @@ export const Header = ({ data }: HeaderProps) => {
     execute({ title, boardId, id: data.id })
   }
   return (
-    <div className="flex items-center gap-x-3 mb-6 w-full">
+    <div className="flex items-start gap-x-3 mb-6 w-full">
       <Layout className="h-5 w-5 mt-1 text-neutral-700" />
       <div className="w-full">
         <form action={onSubmit}>
