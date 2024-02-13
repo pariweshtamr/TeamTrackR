@@ -71,7 +71,7 @@ const FormPopOver = ({
         </PopoverClose>
 
         <form action={onSubmit} className="space-y-4">
-          <div className="spacce-y-4">
+          <div className="space-y-4">
             <FormPicker id="image" errors={fieldErrors} />
             <FormInput
               id="title"
